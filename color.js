@@ -5,7 +5,7 @@
 * Date: 06/21/2010
 *
 * @author Robert Eisele
-* @version 2.2
+* @version 2.5
 *
 * @see http://www.xarg.org/project/jquery-color/
 **/
