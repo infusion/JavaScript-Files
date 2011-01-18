@@ -169,14 +169,14 @@ function Color(color) {
 	var m;
 
 	if (void 0 === s) {
-	    n = parseInt(n, 10);
+	    n = parseFloat(n);
 	    s = 255;
 	    m = 255;
 	} else {
 
 	    if (1 === s) {
 
-		if (void 0 === n) {
+		if (void 0 === n || 1 === n) {
 		    return 1;
 		}
 
@@ -197,7 +197,7 @@ function Color(color) {
 	    return m;
 	}
 
-	if (n <= 1) {
+	if (n < 1 || 1 === s) {
 	    if (m === 1) {
 		return n;
 	    } else {
