@@ -1,14 +1,16 @@
 
 
 function normalize_angle(n, is_rad) {
-	if (is_rad !== undefined) {
-		var pi2 = 2 * Math.PI;
-		return (pi2 + (n % pi2)) % pi2;
+
+	if (undefined !== is_rad) {
+		var tau = 2 * Math.PI;
+		return (tau + (n % tau)) % tau;
 	}
 	return (360 + (n % 360)) % 360;
 }
 
 function angle_between(n, a, b) {
+
 	n = (360 + (n % 360)) % 360;
 	a = (360 + (a % 360)) % 360;
 	b = (360 + (b % 360)) % 360;
@@ -19,6 +21,7 @@ function angle_between(n, a, b) {
 }
 
 Array.prototype.multipush = function () {
+
 	for(var i in arguments) {
 		this[this.length] = arguments[i];
 	}
@@ -39,7 +42,7 @@ Object.prototype.excludeLargestAmmount = function(threshold) {
 		if (this[i] in tmp) {
 			tmp[this[i]] = 1;
 		} else {
-			tmp[this[i]]++;
+			++tmp[this[i]];
 		}
 		if (tmp[this[i]] > max) {
 			val = this[i];
