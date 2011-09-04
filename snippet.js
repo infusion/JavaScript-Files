@@ -1,12 +1,18 @@
-
+/**
+ * A collection of JavaScript functions I've written over the time
+ *
+ * Copyright (c) 2011, Robert Eisele (robert@xarg.org)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ **/
 
 function normalize_angle(n, is_rad) {
 
+	var tau = 360;
+
 	if (undefined !== is_rad) {
-		var tau = 2 * Math.PI;
-		return (tau + (n % tau)) % tau;
+		tau = 2 * Math.PI;
 	}
-	return (360 + (n % 360)) % 360;
+	return (tau + (n % tau)) % tau;
 }
 
 function angle_between(n, a, b) {
@@ -17,7 +23,7 @@ function angle_between(n, a, b) {
 
 	if (a < b)
 		return a <= n && n <= b;
-	return 0 <= n && n <= b || a <= n && n < 360;
+	return a <= n || n <= b;
 }
 
 Array.prototype.multipush = function () {
@@ -54,7 +60,7 @@ Object.prototype.excludeLargestAmmount = function(threshold) {
 		return null;
 	}
 
-	for (var i in this) {
+	for (i in this) {
 		if (this[i] == val) {
 			delete this[i];
 		}
