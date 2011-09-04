@@ -83,3 +83,20 @@ function scatter_amount(amount, sub, mul) {
 	}
 	return sum;
 }
+
+function chop_amount(n, arr) {
+
+	if (1 !== arr[0]) {
+		return false;
+	}
+
+	for (var ret = {}, num, i = arr.length; n && i--; ) {
+
+		num = n / arr[i] | 0;
+		if (num) {
+			ret[arr[i]] = num;
+			n-= num * arr[i];
+		}
+	}
+	return ret;
+}
