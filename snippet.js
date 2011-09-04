@@ -176,3 +176,15 @@ function readable_byte(b) {
 		'PB'
 	][e];
 }
+
+String.random = function(len) {
+
+	len = len || 32;
+
+	var chars = "abcdefghijklmnopqrstuvwxyz0123456789".split("");
+
+	for (var str = ""; len--; ) {
+		str+= chars[36 * Math.random() | 0];
+	}
+	return str;
+}
