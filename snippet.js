@@ -158,3 +158,7 @@ function gpp(x) {
 	}
 	return f;
 }
+
+function possessive(str) {
+	return str + ('s' === str.substr(-1) ? "'" : "'s");
+}
