@@ -100,3 +100,25 @@ function chop_amount(n, arr) {
 	}
 	return ret;
 }
+
+function rate(Ra, Rb, winner) {
+
+	// http://de.wikipedia.org/wiki/Elo-Zahl
+
+	var Ea = 1 / (1 + Math.pow(10, (Rb - Ra) / 400)),
+	Eb = 1 / (1 + Math.pow(10, (Ra - Rb) / 400));
+
+	// Ra+= k * (Sa - Ea)
+
+	if (2 == winner) {
+		Ra+= 10 * (0.0 - Ea);
+		Rb+= 10 * (1.0 - Eb);
+	} else if (1 == winner) {
+		Ra+= 10 * (1.0 - Ea);
+		Rb+= 10 * (0.0 - Eb);
+	} else {
+		Ra+= 10 * (0.5 - Ea);
+		Rb+= 10 * (0.5 - Eb);
+	}
+	return [Ra, Rb];
+}
