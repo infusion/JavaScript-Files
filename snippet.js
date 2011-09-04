@@ -1,4 +1,4 @@
- /**
+/**
  * A collection of JavaScript functions I've written over the time
  *
  * Copyright (c) 2011, Robert Eisele (robert@xarg.org)
@@ -22,7 +22,7 @@ function angle_between(n, a, b) {
 	b = (360 + (b % 360)) % 360;
 
 	if (a < b)
-		return a <= n && n <= b;
+	return a <= n && n <= b;
 	return a <= n || n <= b;
 }
 
@@ -161,4 +161,27 @@ function readable_byte(b) {
 		'TB',
 		'PB'
 	][e];
+}
+
+function smooth(data, alpha) {
+
+	var res = data[0];
+
+	for (var i = 0; i < data.length; i++) {
+		res = res * (1 - alpha) + data[i] * alpha;
+	}
+	return res;
+}
+
+function trend(data, weight) {
+
+	var current = data.pop(),
+	      trend = smooth(data, 2 / 3),
+		   hour = new Date().getHours();
+
+	for (var sup = 0, sum = 0, i = 24; i--; ) {
+		sup+= weight[i] * (i < hour);
+		sum+= weight[i];
+	}
+	return current - sup / sum * trend + trend;
 }
