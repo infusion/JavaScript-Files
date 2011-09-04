@@ -165,14 +165,14 @@ function possessive(str) {
 
 function readable_byte(b) {
 
-	var e = Math.log(b) / (10 * Math.LN2) | 0;
+	var e = Math.log(b) / (10 * Math.LN2) | 0;
 
 	return (Math.round(b / Math.pow(1024, e) * 100) / 100) + [
-	'B',
-	'KB',
-	'MB',
-	'GB',
-	'TB',
-	'PB'
+		'B',
+		'KB',
+		'MB',
+		'GB',
+		'TB',
+		'PB'
 	][e];
 }
