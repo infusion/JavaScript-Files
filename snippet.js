@@ -26,13 +26,6 @@ function angle_between(n, a, b) {
 	return a <= n || n <= b;
 }
 
-Array.prototype.multipush = function () {
-
-	for(var i in arguments) {
-		this[this.length] = arguments[i];
-	}
-}
-
 Object.prototype.excludeLargestAmmount = function(threshold) {
 
 	if (threshold === undefined) {
@@ -184,4 +177,16 @@ function trend(data, weight) {
 		sum+= weight[i];
 	}
 	return current - sup / sum * trend + trend;
+}
+
+function bound(n, x, y) {
+
+	if (y < x || n < x) {
+		return x;
+	}
+
+	if (y < n) {
+		return y;
+	}
+	return n;
 }
