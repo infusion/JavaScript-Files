@@ -190,3 +190,27 @@ function bound(n, x, y) {
 	}
 	return n;
 }
+
+function array_squares(n) {
+
+	var x = Math.sqrt(n),
+	    y = 0,
+	    r = [];
+
+	while (y <= x) {
+
+		var sum = x * x + y * y;
+
+		if (sum < n) {
+			++y;
+			continue;
+		}
+
+		if (sum > n) {
+			--x;
+			continue;
+		}
+		r.push([x--, y++]);
+	}
+	return r;
+}
