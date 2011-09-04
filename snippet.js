@@ -67,3 +67,19 @@ Object.prototype.excludeLargestAmmount = function(threshold) {
 	}
 	return val;
 }
+
+function scatter_amount(amount, sub, mul) {
+
+	/* Table from: http://aws.amazon.com/de/s3/pricing/
+		scattered_price(100000,
+			[ 1E3,	49E3,	45E4,	5E5,	4E6,	5E6 ],
+			[ 0.14,	0.125,	0.11,	0.095,	0.08,	0.055 ]
+		)
+	 */
+	for (var sum = 0, i = 0; amount > 0; amount-= sub[i++]) {
+
+		sum+= mul[i] * (amount <= sub[i] ? amount : sub[i]);
+	//	sum+= mul[i] * (amount - Math.max(0, amount - sub[i]));
+	}
+	return sum;
+}
