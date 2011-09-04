@@ -136,3 +136,25 @@ function numberchop(n, arr) {
 	}
 	return ret;
 }
+
+function gpp(x) {
+
+	var f = 1,
+	n = 1,
+	nn;
+
+	if (x <= 0) {
+		return 1;
+	}
+
+	for (;; n++) {
+
+		if ((nn = n * n) >= x) {
+			break;
+		}
+		if (0 === (x % nn)) {
+			f = n;
+		}
+	}
+	return f;
+}
