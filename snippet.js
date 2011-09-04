@@ -162,23 +162,3 @@ function readable_byte(b) {
 		'PB'
 	][e];
 }
-
-String.random = function(len) {
-
-	len = len || 32;
-
-	var chars = "abcdefghijklmnopqrstuvwxyz0123456789".split("");
-
-	for (var str = ""; len--; ) {
-		str+= chars[36 * Math.random() | 0];
-	}
-	return str;
-}
-
-Math.log2 = function(x) {
-	return Math.log(x) / Math.LN2;
-}
-
-Math.log10 = function(x) {
-	return Math.log(x) / Math.LN10;
-}
