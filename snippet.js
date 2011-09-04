@@ -179,7 +179,7 @@ function readable_byte(b) {
 
 String.random = function(len) {
 
-	len = len || 32;
+	len = len || 32;
 
 	var chars = "abcdefghijklmnopqrstuvwxyz0123456789".split("");
 
