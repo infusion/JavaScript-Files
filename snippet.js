@@ -1,4 +1,4 @@
-/**
+ /**
  * A collection of JavaScript functions I've written over the time
  *
  * Copyright (c) 2011, Robert Eisele (robert@xarg.org)
@@ -121,20 +121,6 @@ function rate(Ra, Rb, winner) {
 		Rb+= 10 * (0.5 - Eb);
 	}
 	return [Ra, Rb];
-}
-
-function numberchop(n, arr) {
-
-	var ret = {}, num, i;
-	for (i=arr.length; n && i--; ) {
-
-		num = n / arr[i] | 0;
-		if (num) {
-			ret[arr[i]] = num;
-			n-= num * arr[i];
-		}
-	}
-	return ret;
 }
 
 function gpp(x) {
