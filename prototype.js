@@ -5,6 +5,22 @@
  * Dual licensed under the MIT or GPL Version 2 licenses.
  **/
 
+Array.prototype.multipush = function () {
+
+	for(var i in arguments) {
+		this[this.length] = arguments[i];
+	}
+}
+
+Array.prototype.sum = function() {
+
+	var sum = 0;
+	for (var i in this) {
+		sum+= 1 * this[i];
+	}
+	return sum;
+}
+
 Math.log2 = function(x) {
 	return Math.log(x) / Math.LN2;
 }
