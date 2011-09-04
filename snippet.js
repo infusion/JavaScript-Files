@@ -122,3 +122,17 @@ function rate(Ra, Rb, winner) {
 	}
 	return [Ra, Rb];
 }
+
+function numberchop(n, arr) {
+
+	var ret = {}, num, i;
+	for (i=arr.length; n && i--; ) {
+
+		num = n / arr[i] | 0;
+		if (num) {
+			ret[arr[i]] = num;
+			n-= num * arr[i];
+		}
+	}
+	return ret;
+}
