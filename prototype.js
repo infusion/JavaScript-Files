@@ -54,3 +54,30 @@ String.random = function(len) {
 	}
 	return str;
 }
+
+String.prototype.trim = function() {
+	return this.replace(/^\s+|\s+$/, '');
+};
+
+String.prototype.truncate = function(len, app) {
+	if(typeof app !== "string") app = "...";
+
+	if (len < this.length - app.length) {
+		return this.substr(0, len) + app;
+	}
+	return String(this);
+};
+
+String.prototype.truncateurl = function(len, app, pos) {
+	if(typeof app !== "string") app = "[...]";
+	if(typeof pos !== "number") pos = 0.8;
+
+	if (len + app.length < this.length) {
+		return this.slice(0, pos*= len - app.length) + app + this.slice(pos - len);
+	}
+	return String(this);
+};
+
+String.prototype.repeat = function(num) {
+	return new Array(num + 1).join(this);
+};

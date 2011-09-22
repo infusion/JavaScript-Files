@@ -214,3 +214,16 @@ function array_squares(n) {
 	}
 	return r;
 }
+
+function getClientDate(off) {
+
+	var now = new Date;
+
+	now.setTime(now.getTime() + 6e4 * (now.getTimezoneOffset() - off));
+	return now;
+}
+
+function parseFloatEx(x) {
+
+	return parseFloat(x.replace(/[^\d,.]+/g, "").replace(",", "."));
+}
