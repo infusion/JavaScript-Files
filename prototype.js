@@ -10,7 +10,7 @@ Array.prototype.multipush = function () {
 	for(var i in arguments) {
 		this[this.length] = arguments[i];
 	}
-}
+};
 
 Array.prototype.sum = function() {
 
@@ -19,29 +19,29 @@ Array.prototype.sum = function() {
 		sum+= 1 * this[i];
 	}
 	return sum;
-}
+};
 
 Math.log2 = function(x) {
 	return Math.log(x) / Math.LN2;
-}
+};
 
 Math.log10 = function(x) {
 	return Math.log(x) / Math.LN10;
-}
+};
 
 Math.cosh = function(x) {
 	return (Math.exp(x) + Math.exp(-x)) / 2;
-}
+};
 
 Math.sinh = function(x) {
 	return (Math.exp(x) - Math.exp(-x)) / 2;
-}
+};
 
 Math.tanh = function(x) {
 
 	var t = Math.exp(2 * x);
 	return (t - 1) / (t + 1);
-}
+};
 
 String.random = function(len) {
 
@@ -53,7 +53,7 @@ String.random = function(len) {
 		str+= chars[36 * Math.random() | 0];
 	}
 	return str;
-}
+};
 
 String.prototype.trim = function() {
 	return this.replace(/^\s+|\s+$/, '');
