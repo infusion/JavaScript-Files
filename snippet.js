@@ -230,3 +230,8 @@ function range_diff(a, b, n) {
 
 	return (n - b) * (b < n) ^ (a - n) * (n < a);
 }
+
+function normalize_version(str, len) {
+
+	return str.match(/[^._,]+/g).slice(0, len || 2).join(".");
+}
