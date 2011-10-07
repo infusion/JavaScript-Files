@@ -107,3 +107,38 @@ Array.prototype.sum = function(){
 Array.prototype.random = function() {
 	return this[this.length * Math.random() | 0];
 };
+
+Object.prototype.excludeLargestAmmount = function(threshold) {
+
+	if (threshold === undefined) {
+		threshold = 2;
+	}
+
+	var tmp = [];
+	var max = 0;
+	var val = 0;
+
+	for (var i in this) {
+
+		if (this[i] in tmp) {
+			tmp[this[i]] = 1;
+		} else {
+			++tmp[this[i]];
+		}
+		if (tmp[this[i]] > max) {
+			val = this[i];
+			max = tmp[val];
+		}
+	}
+
+	if (max < threshold) {
+		return null;
+	}
+
+	for (i in this) {
+		if (this[i] == val) {
+			delete this[i];
+		}
+	}
+	return val;
+}

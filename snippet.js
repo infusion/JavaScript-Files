@@ -26,41 +26,6 @@ function angle_between(n, a, b) {
 	return a <= n || n <= b;
 }
 
-Object.prototype.excludeLargestAmmount = function(threshold) {
-
-	if (threshold === undefined) {
-		threshold = 2;
-	}
-
-	var tmp = [];
-	var max = 0;
-	var val = 0;
-
-	for (var i in this) {
-
-		if (this[i] in tmp) {
-			tmp[this[i]] = 1;
-		} else {
-			++tmp[this[i]];
-		}
-		if (tmp[this[i]] > max) {
-			val = this[i];
-			max = tmp[val];
-		}
-	}
-
-	if (max < threshold) {
-		return null;
-	}
-
-	for (i in this) {
-		if (this[i] == val) {
-			delete this[i];
-		}
-	}
-	return val;
-}
-
 function scatter_amount(amount, sub, mul) {
 
 	/* Table from: http://aws.amazon.com/de/s3/pricing/
