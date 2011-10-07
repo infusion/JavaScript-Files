@@ -82,7 +82,7 @@ String.prototype.repeat = function(num) {
 	return new Array(num + 1).join(this);
 };
 
-String.prototype.submap= function(map) {
+String.prototype.subpart= function(map) {
 
     var ret = [];
     for (var i in map) {
