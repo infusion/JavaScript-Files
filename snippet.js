@@ -138,10 +138,6 @@ function gpp(x) {
 	return f;
 }
 
-function possessive(str) {
-	return str + ('s' === str.substr(-1) ? "'" : "'s");
-}
-
 function readable_byte(b) {
 
 	var e = Math.log(b) / (10 * Math.LN2) | 0;
