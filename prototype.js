@@ -81,3 +81,12 @@ String.prototype.truncateurl = function(len, app, pos) {
 String.prototype.repeat = function(num) {
 	return new Array(num + 1).join(this);
 };
+
+String.prototype.submap= function(map) {
+
+    var ret = [];
+    for (var i in map) {
+        ret.push(this.substr(map[i][0], map[i][1]));
+    }
+    return ret;
+};
