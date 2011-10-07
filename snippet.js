@@ -99,7 +99,7 @@ function rate(Ra, Rb, winner) {
 	// http://de.wikipedia.org/wiki/Elo-Zahl
 
 	var Ea = 1 / (1 + Math.pow(10, (Rb - Ra) / 400)),
-	Eb = 1 / (1 + Math.pow(10, (Ra - Rb) / 400));
+		Eb = 1 / (1 + Math.pow(10, (Ra - Rb) / 400));
 
 	// Ra+= k * (Sa - Ea)
 
@@ -226,10 +226,5 @@ function parseFloatEx(x) {
 
 function range_diff(a, b, n) {
 
-	/*
-	a <= b <= n	-> n - b
-	n <= a <= b	-> a - n
-	a <= n <= b	-> 0
-	*/
-	return (n - b) * (b < n) + (a - n) * (n < a);
+	return (n - b) * (b < n) ^ (a - n) * (n < a);
 }
