@@ -223,3 +223,17 @@ function parseFloatEx(x) {
 
 	return parseFloat(x.replace(/[^\d,.]+/g, "").replace(",", "."));
 }
+
+function range_diff(a, b, n) {
+
+	/*
+	a <= b <= n	-> n - b
+	n <= a <= b	-> a - n
+	a <= n <= b	-> 0
+	*/
+	if (b < n)
+		return n - b;
+	if (n < a)
+		return a - n;
+	return 0;
+}
