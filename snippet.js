@@ -231,9 +231,5 @@ function range_diff(a, b, n) {
 	n <= a <= b	-> a - n
 	a <= n <= b	-> 0
 	*/
-	if (b < n)
-		return n - b;
-	if (n < a)
-		return a - n;
-	return 0;
+	return (n - b) * (b < n) + (a - n) * (n < a);
 }
