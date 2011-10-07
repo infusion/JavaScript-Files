@@ -189,7 +189,9 @@ function bound(n, x, y) {
 
 function array_squares(n) {
 
-	var x = Math.sqrt(n),
+	// Facebook Hacker Cup solution
+
+	var x = Math.sqrt(n) | 0,
 	    y = 0,
 	    r = [];
 
