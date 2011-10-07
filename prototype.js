@@ -90,3 +90,20 @@ String.prototype.subpart= function(map) {
     }
     return ret;
 };
+
+Array.prototype.max = function(){
+	return Math.max.apply({}, this)
+};
+
+Array.prototype.min = function(){
+	return Math.min.apply({}, this)
+};
+
+Array.prototype.sum = function(){
+	for(var i = this.length, sum = 0; i--; sum+= this[i]);
+	return sum;
+};
+
+Array.prototype.random = function() {
+	return this[this.length * Math.random() | 0];
+};
