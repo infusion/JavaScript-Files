@@ -4,16 +4,11 @@
 
 draw = (size, cb) ->
   chars = [ ":", "O" ]
-  i = 0
 
-  while i < size
-    j = 0
-
-    while j < size
+  for i in [0 .. size - 1] by 1
+    for j in [0 .. size - 1] by 1
       process.stdout.write(chars[Number(cb(i, j, size))])
-      j++
     process.stdout.write("\n")
-    i++
   console.log("\n\n\n")
   return
 
