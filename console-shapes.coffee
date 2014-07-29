@@ -1,5 +1,7 @@
 ###
 # Draw some shapes on the console
+# Copyright (c) 2014, Robert Eisele (robert@xarg.org)
+# Dual licensed under the MIT or GPL Version 2 licenses.
 ###
 
 draw = (size, cb) ->
