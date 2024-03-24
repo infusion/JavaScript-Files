@@ -1,5 +1,5 @@
 /**
-* A handy class to calculate color values.
+* A small PNG generator lib
 *
 * @version 1.0
 * @author Robert Eisele
